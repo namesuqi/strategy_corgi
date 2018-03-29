@@ -1,0 +1,23 @@
+# pwd : 192.168.3.217  /data/filebeat
+# execute : filebeat.sh -c /data/filebeat/push_disk_cache_filebeat.yml &
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/vod_push_disk_cache.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: disk
+
+output.logstash:
+  hosts: ["192.168.1.188:5052"]
+           #output.console:
+           #  pretty: true
+
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: disk.log
+  keepfiles: 7

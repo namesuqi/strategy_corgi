@@ -1,0 +1,12 @@
+[program:task_push_prefetch_filebeat]
+command=filebeat.sh -c /data/filebeat/task_vod_push_prefetch.yml &
+stdout_logfile=/root/corgi/output/task_vod_push_prefetch.out
+autostart=true
+autorestart=true
+startsecs=5
+priority=1
+stopasgroup=true
+killasgroup=true
+
+stderr_logfile=/root/corgi/supervisor/task_vod_push_prefetch.yml-err.log
+

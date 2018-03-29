@@ -1,0 +1,118 @@
+C:\Python27\python.exe D:/git/corgi/libs/unittest/related_condition.py
+Help on module related_condition:
+
+NAME
+    related_condition
+
+FILE
+    d:\git\corgi\libs\unittest\related_condition.py
+
+DESCRIPTION
+    # coding=utf-8
+    # related information of unittest
+    # author: JinYiFan
+
+FUNCTIONS
+    add_multi_files_in_dir(file_count, ppc=None)
+        dir-srv新注册多个文件
+        :param file_count: 新注册文件数目
+        :param ppc: ppc大小（没有表示ppc随机）
+        :return: 新注册文件的file_id
+
+    add_one_file_in_dir(file_size, ppc)
+        dir-srv注册一个新文件
+        :param file_size: 文件大小（B）
+        :param ppc: ppc大小
+        :return: 新文件的file_id
+
+    change_config(push_download_bandwidth, seed_download_bandwidth, file_count, peer_count)
+        修改config文件的参数配置
+        :param push_download_bandwidth: push下载带宽(Mbps)
+        :param seed_download_bandwidth: seed下载带宽(Mbps)
+        :param file_count: dir文件数目
+        :param peer_count: 播放节点数目
+        :return:
+
+    control_dir_file_num(file_count)
+        控制dir-srv的文件总数
+        :param file_count: 文件总数
+        :return:
+
+    del_file_in_dir()
+         dir-srv删除已存在的文件（vod_push_srv和sdk已下载完成该文件）
+        :return:
+
+    wait_for_second(wait_time)
+
+DATA
+    BEHAVIOR = 'in'
+    BLANK_SCHEMA = symbol('blank_schema')
+    CDN_DOWNLOAD = 100000
+    CHANNEL_BITRATE = 41943040
+    CPPC = 1
+    DB_CONNECT_STRING = 'mysql+mysqldb://root:@192.168.4.234:3306/config'
+    DISK_FREE = 29080141824L
+    DISK_SIZE = 0
+    DISK_TOTAL = 42139451392L
+    DURATION = 60
+    ERROR_TYPE = 'NA'
+    EXT_CONTINUE = symbol('EXT_CONTINUE')
+    EXT_STOP = symbol('EXT_STOP')
+    FILE_STATUS_1 = 'downloading'
+    FILE_STATUS_2 = 'done'
+    FILE_STATUS_WRITE_NUMBER = 300
+    FILE_WRITE_NUMBER = 10
+    FLAG = 'downloading'
+    ISP_ID = '0'
+    KAFKA_ADDRESS = '192.168.4.230:9092'
+    LOGS_PATH = r'D:\git\corgi/logs'
+    LSM_FREE = 427454576
+    LSM_FREE_LEVEL_A = 'A:lsm<=10'
+    LSM_FREE_LEVEL_B = 'B:10<lsm<=50'
+    LSM_FREE_LEVEL_C = 'C:50<lsm<=100'
+    LSM_FREE_LEVEL_D = 'D:100<lsm<=300'
+    LSM_FREE_LEVEL_E = 'E:300<lsm<=600'
+    LSM_FREE_LEVEL_F = 'F:lsm>600'
+    LSM_TOTAL = 524288000
+    MISC_PATH = r'D:\git\corgi/misc'
+    MONITOR_PATH = r'D:\git\corgi/monitor'
+    MYSQL_DB = 'config'
+    MYSQL_HOST = '192.168.4.234'
+    MYSQL_PASSWORD = ''
+    MYSQL_PORT = 3306
+    MYSQL_USER = 'root'
+    OPERATION = 'download'
+    P2P_DOWNLOAD = 12345
+    PER_PEER_DOWNLOAD_ALL = 2516582400L
+    PLAY_TYPE = 'vod'
+    PPC = 304
+    PRIORITY = 1
+    PROVINCE_ID = '0'
+    PSIZE = 1396
+    PUSH_CONCURRENT_VOLUME = 100
+    PUSH_DEL_LEN = 6
+    PUSH_ID = ['00:16:3E:06:C3:A6', '00:16:3E:06:C4:A7']
+    PUSH_IP = ['118.190.153.230', '112.190.153.230']
+    PUSH_LSM_FREE = [3000000000000L, 3230000000000L]
+    PUSH_LSM_USED = [160867237888L, 12867237888L]
+    PUSH_PREFETCH_LEN = 13
+    PUSH_WRITE_NUMBER = 1
+    REPORT_PATH = r'D:\git\corgi/report'
+    SDK_DEL_LEN = 7
+    SDK_DOWNLOAD_LEN = 14
+    SDK_WRITE_NUMBER = 5000
+    SEEDS_DOWNLOAD = 112345
+    SEEDS_UPLOAD = 112345
+    SIMULATOR_PATH = r'D:\git\corgi/simulator_log'
+    STUN_IP = '192.168.1.202'
+    chars = '0123456789ABCDEF'
+    charsall = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv...
+    disk_free = 67100859149L
+    disk_total = 85459352709L
+    func = <sqlalchemy.sql.functions._FunctionGenerator object>
+    length = 15
+    lsm_free = 7166507632L
+    lsm_total = 524288000
+    modifier = <sqlalchemy.sql.functions._FunctionGenerator object>
+    orm = <libs.database.mysql_orm.MysqlORM object>
+    t = 1517395531.716

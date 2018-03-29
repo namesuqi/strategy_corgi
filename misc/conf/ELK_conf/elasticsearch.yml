@@ -1,0 +1,19 @@
+# pwd : 192.168.1.188 /data/elasticsearch
+# execute : 1. chown -R elasticsearch:elasticsearch /data/elasticsearch/
+#           2. su elasticsearch
+#           3. ./elasticsearch &
+
+cluster.name: elk-application
+node.name: node-1
+
+path.data: /data/elasticsearch/data
+path.logs: /data/elasticsearch/logs
+
+network.host: 192.168.1.188
+http.port: 9200
+
+discovery.zen.ping.unicast.hosts: ["node-1"]
+discovery.zen.minimum_master_nodes: 1
+
+http.cors.enabled: true
+http.cors.allow-origin: "*"

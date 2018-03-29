@@ -1,0 +1,47 @@
+spark:
+  batch_interval: 30
+  hb_timeout_ms: 60000
+  truncate_min: 1:00
+  loglevel: WARN
+  debug_model: False
+  checkpoint_dir: /tmp/checkpoint
+
+kafka:
+  nodes: 192.168.4.230:9092
+  avro_srvs: 192.168.4.230:8081
+  group_id: vod_strategy0888802
+  zk_srvs: 192.168.4.230:2181
+
+topics:
+  peer_info: vod_peer_info
+  heartbeat: vod_heartbeat
+  fod_report: vod_fod_report
+  vod_files: vod_all_files
+  sdk_flow: vod_sdk_flow
+  sdk_lsm: vod_sdk_lsm
+  sdk_files: vod_sdk_file_status
+  srv_prefetch: vod_push_prefetch_task
+  srv_lsm: vod_push_lsm
+  srv_files: vod_push_disk_cache
+  task_srv_prefetch: task_vod_push_prefetch
+  task_srv_delete: task_vod_push_delete
+  task_sdk_download: task_vod_sdk_download
+  task_sdk_delete: task_vod_sdk_delete
+
+etcd:
+  host: 192.168.1.251
+  port: 2379
+  user_blacklist: /business/ops/vod/user_blacklist
+  file_blacklist: /business/ops/vod/file_blacklist
+  global_file_copies: /business/ops/vod/global_file_copies
+  user_file_copies: /business/ops/vod/user_file_copies
+  wasted_files: /business/ops/vod/wasted_files
+  high_priority_files: /business/ops/vod/high_priority_files
+
+file:
+  min_push_peers: 800
+  one_copy_peers: 400
+  file_size_coefficient: 1.2
+  max_prefetch_tasks: 2
+  max_download_tasks: 100
+  whitelist : 581432211B174BE28FFD1565C4D77EA7,A3B47639010F4951BEE164C64B5C4FCD,8973145BBAB043B785F9BDEAAF15708B

@@ -1,0 +1,19 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/seed_file_done.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: done
+
+output.logstash:
+  hosts: ["192.168.1.188:5061"]
+          # output.console:
+          # pretty: true
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: seed_file_done.log
+  keepfiles: 7

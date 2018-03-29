@@ -1,0 +1,12 @@
+[program:online_combine_filebeat]
+command=filebeat.sh -c /data/filebeat/online_combine_filebeat.yml &
+stdout_logfile=/root/corgi/output/online_combine_filebeat.out
+autostart=true
+autorestart=true
+startsecs=5
+priority=1
+stopasgroup=true
+killasgroup=true
+
+stderr_logfile=/root/corgi/supervisor/online_combine_filebeat-err.log
+

@@ -1,0 +1,19 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/task_vod_sdk_download.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: task_sdk_download
+
+output.logstash:
+  hosts: ["192.168.1.188:5057"]
+      # output.console:
+      # pretty: true
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: task_sdk_download.log
+  keepfiles: 7

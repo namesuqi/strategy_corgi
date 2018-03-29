@@ -1,0 +1,23 @@
+# pwd : 192.168.3.217  /data/filebeat
+# execute : filebeat.sh -c /data/filebeat/file_status_filebeat.yml &
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/vod_sdk_file_status.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: status
+
+output.logstash:
+  hosts: ["192.168.1.188:5047"]
+ 
+               # output.console:
+                # pretty: true
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: status.log
+  keepfiles: 7

@@ -1,0 +1,24 @@
+# pwd : 192.168.3.217  /data/filebeat
+# execute : filebeat.sh -c /data/filebeat/all_files_filebeat.yml &
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/vod_all_files.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: file
+
+output.logstash:
+  hosts: ["192.168.1.188:5048"]
+
+               #output.console:
+               #  pretty: true
+
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: file.log
+  keepfiles: 7

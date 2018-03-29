@@ -1,0 +1,6 @@
+# pwd : 192.168.1.188 /data/kibana/config
+# execute : ./kibana &
+
+server.port: 5601
+server.host: "192.168.1.188"
+elasticsearch.url: "http://192.168.1.188:9200"

@@ -1,0 +1,11 @@
+[program:read_task_main]
+command=/root/corgi/read_task_main.py &
+stdout_logfile=/root/corgi/output/read_task_main.out
+autostart=true
+autorestart=true
+startsecs=5
+priority=2
+stopasgroup=true
+killasgroup=true
+
+stderr_logfile=/root/corgi/supervisor/read_task_main-err.log

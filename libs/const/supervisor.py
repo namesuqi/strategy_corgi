@@ -1,0 +1,8 @@
+# coding=utf-8
+# supervisor config information
+
+CORGI_SUPERVISOR = 'http://user:123@192.168.3.217:9001'
+# CORGI_SUPERVISOR = 'http://user:123@192.168.4.234:9001'
+# ELK_PUSH_SEED_SUPERVISOR = 'http://user:123@192.168.4.235:9001'
+ELK_PUSH_SEED_SUPERVISOR = 'http://user:123@192.168.1.188:9001'
+READ_TASK_MAIN_SUPERVISOR = 'http://user:123@192.168.3.190:9001'

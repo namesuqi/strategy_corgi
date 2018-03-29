@@ -1,0 +1,29 @@
+# pwd : 192.168.3.217  /data/filebeat
+# execute : filebeat.sh -c /data/filebeat/sdk_lsm_filebeat.yml &
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /root/corgi/logs/vod_sdk_lsm.log
+  json.message_key: event
+  json.keys_under_root: true
+  document_type: sdk_lsm
+#  scan_frequency: 0.1s
+#
+#  #name: "vod_peer_lsmfree"
+#
+output.logstash:
+  hosts: ["192.168.1.188:5049"]
+
+         #output.console:
+         #  pretty: true
+
+logging.level: warning
+logging.to_files: true
+logging.syslog: false
+logging.files:
+  path: /var/log/filebeat
+  name: sdk_lsm.log
+  keepfiles: 7
+
+
